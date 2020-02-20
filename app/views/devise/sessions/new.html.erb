@@ -1,16 +1,16 @@
-<h1><%= I18n.t('header.sign_in') %></h1>
+<h1><%= t('header.sign_in') %></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-      <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: I18n.t('user.email'), autocomplete: "email" %>
+      <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: t('user.email'), autocomplete: "email" %>
     </div>
   </div>
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <%= f.password_field :password, class: "form-control", placeholder: I18n.t('user.password'), autocomplete: "current-password" %>
+      <%= f.password_field :password, class: "form-control", placeholder: t('user.password'), autocomplete: "current-password" %>
     </div>
   </div>
   <% if devise_mapping.rememberable? %>
@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary btn-lg"><%= I18n.t('button.sign_in') %></button>
+    <button type="submit" class="btn btn-primary btn-lg"><%= t('button.sign_in') %></button>
   </div>
 <% end %>
 

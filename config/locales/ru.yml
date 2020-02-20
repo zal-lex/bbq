@@ -48,12 +48,23 @@ ru:
     forgot_password: 'Восстановить доступ'
     edit_profile: 'Управление профилем'
     cancel_account: 'Удаление аккаунта'
+    edit_event: 'Редактирование события'
+    events: 'События'
+    new_event: 'Новое событие'
+    organizer: 'Организовал'
   button:
     sign_up: 'Зарегистрироваться'
     sign_in: 'Войти'
+    log_out: 'Выйти'
+    profile: 'Профиль'
+    edit_profile: 'Редактировать профиль'
     forgot_password: 'Получить инструкции'
     update: 'Обновить'
     cancel_account: 'Удалиться'
+    save: 'Сохранить'
+    create_event: 'Создать событие'
+    edit: 'Изменить'
+    delete: 'Удалить'
   user:
     email: 'Email Адрес'
     confirm_password: 'Подтвердите пароль'
@@ -61,7 +72,10 @@ ru:
     new_password: 'Новый пароль'
   text:
     skip_password_change: 'оставьте следующие 2 поля пустыми, если не хотите менять пароль'
+    missed_events: 'Пользователь пока не организовал ни одного события'
     confirm_password_change: 'введите текущий пароль, чтобы сохранить изменения'
     cancel_account_confirmation: 'Вы устали от вопросов и больше не хотите задавить их другим?'
   link:
-    back: 'Назад'
+    back: 'Вернуться'
+    change_password: 'Сменить пароль'
+

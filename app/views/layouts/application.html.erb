@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t('app.name') %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -51,11 +51,11 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-            <li><%= link_to 'Профиль', current_user %></li>
-            <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+            <li><%= link_to t('button.profile'), current_user %></li>
+            <li><%= link_to t('button.log_out'), destroy_user_session_path, :method => :delete %></li>
           <% else %>
-            <li><%= link_to 'Войти', new_user_session_path %></li>
-            <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+            <li><%= link_to t('button.sign_in'), new_user_session_path %></li>
+            <li><%= link_to t('button.sign_up'), new_user_registration_path %></li>
           <% end %>
           </ul>
         </div>
