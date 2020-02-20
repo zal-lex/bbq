@@ -12,7 +12,7 @@
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-      <%= f.email_field :email, autofocus: true, placeholder: "Email Address", autocomplete: "email" %>
+      <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Email Address", autocomplete: "email" %>
     </div>
   </div>
 
@@ -24,20 +24,20 @@
     <i>(leave blank if you don't want to change it)</i><br />
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password" %>
+      <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
     </div>
   </div>
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <%= f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "new-password" %>
     </div>
   </div>
   <div class="form-group">
     <i>(we need your current password to confirm your changes)</i><br />
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <%= f.password_field :current_password, placeholder: "Current Password", autocomplete: "current-password" %>
+      <%= f.password_field :current_password, class: "form-control", placeholder: "Current Password", autocomplete: "current-password" %>
     </div>
   </div>
   <div class="form-group">
