@@ -47,6 +47,6 @@
 
 <h3><%= I18n.t('header.cancel_account') %></h3>
 
-<p><%= I18n.t('text.cancel_account_confirmation') %> <%= button_to I18n.t('button.cancel_account'), registration_path(resource_name), class: "btn btn-danger btn-lg", data: { confirm: I18n.t('notice.cancel_account_confirmation') }, method: :delete %></p>
+<p><%= I18n.t('text.cancel_account_confirmation') %> <%= button_to I18n.t('button.cancel_account'), registration_path(resource_name), class: "btn btn-danger btn-lg", data: { confirm: I18n.t('are_you_sure') }, method: :delete %></p>
 
 <%= link_to I18n.t('link.back'), :back %>
