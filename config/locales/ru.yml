@@ -38,3 +38,30 @@ ru:
     one: 'Данные не удалось сохранить из-за %{count} ошибки:'
     few: 'Данные не удалось сохранить из-за %{count} ошибок:'
     many: 'Данные не удалось сохранить из-за %{count} ошибок:'
+
+  # Перевод форм на русский
+  header:
+    sign_up: 'Регистрация'
+    sign_in: 'Вход'
+    forgot_password: 'Восстановить доступ'
+    edit_profile: 'Управление профилем'
+    cancel_account: 'Удаление аккаунта'
+  button:
+    sign_up: 'Зарегистрироваться'
+    sign_in: 'Войти'
+    forgot_password: 'Получить инструкции'
+    update: 'Обновить'
+    cancel_account: 'Удалиться'
+  user:
+    email: 'Email Адрес'
+    confirm_password: 'Подтвердите пароль'
+    password: 'Пароль'
+    new_password: 'Новый пароль'
+  text:
+    skip_password_change: 'оставьте следующие 2 поля пустыми, если не хотите менять пароль'
+    confirm_password_change: 'введите текущий пароль, чтобы сохранить изменения'
+    cancel_account_confirmation: 'Вы устали от вопросов и больше не хотите задавить их другим?'
+  link:
+    back: 'Назад'
+  notice:
+    cancel_account_confirmation: 'Вы уверены?'

@@ -1,5 +1,5 @@
 <div class="w-25 signup-form">
-  <h2>Sign up</h2>
+  <h1><%= I18n.t('header.sign_up') %></h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <% if devise_error_messages! != '' %>
@@ -14,23 +14,23 @@
     <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Email Address", autocomplete: "email" %>
+        <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: I18n.t('user.email'), autocomplete: "email" %>
       </div>
     </div>
     <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: I18n.t('user.password'), autocomplete: "new-password" %>
       </div>
     </div>
     <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: I18n.t('user.confirm_password'), autocomplete: "new-password" %>
       </div>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      <button type="submit" class="btn btn-primary btn-lg"><%= I18n.t('button.sign_up') %></button>
     </div>
   <% end %>
 
