@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     # вложенный ресурс подписок
     resources :subscriptions, only: [:create, :destroy]
+    resources :photos, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update]
 end

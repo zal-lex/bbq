@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
 
   after_commit :link_subscriptions, on: :create
 
+  mount_uploader :avatar, AvatarUploader
+
   private
 
   def set_name
