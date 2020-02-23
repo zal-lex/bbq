@@ -40,12 +40,6 @@ class Subscription < ActiveRecord::Base
     end
   end
 
-  def validate(record)
-    if User.find_by(email: record.user_email)
-      record.errors[:base] << "Пользователь с таким e-mail зарегистрирован"
-    end
-  end
-
   private
 
   def user_email_presence
