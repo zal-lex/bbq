@@ -19,6 +19,7 @@ class Subscription < ActiveRecord::Base
   validates :user_email, uniqueness: {scope: :event_id}, unless: 'user.present?'
 
   validate :user_email_presence, unless: 'user.present?'
+  validate :user_event_owner, if: 'user.present?'
 
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
@@ -45,6 +46,12 @@ class Subscription < ActiveRecord::Base
   def user_email_presence
     if User.find_by(email: user_email)
       errors.add(:user_email, "- пользователь с таким e-mail зарегистрирован")
+    end
+  end
+
+  def user_event_owner
+    if event.user_id == user.id
+      errors.add(:user_name, "- вы не можете подписаться на своё событие")
     end
   end
 end
