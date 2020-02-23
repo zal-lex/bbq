@@ -18,6 +18,8 @@ class Subscription < ActiveRecord::Base
   # Или один email может использоваться только один раз (если анонимная подписка)
   validates :user_email, uniqueness: {scope: :event_id}, unless: 'user.present?'
 
+  validate :user_email_presence, unless: 'user.present?'
+
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
   def user_name
@@ -35,6 +37,20 @@ class Subscription < ActiveRecord::Base
       user.email
     else
       super
+    end
+  end
+
+  def validate(record)
+    if User.find_by(email: record.user_email)
+      record.errors[:base] << "Пользователь с таким e-mail зарегистрирован"
+    end
+  end
+
+  private
+
+  def user_email_presence
+    if User.find_by(email: user_email)
+      errors.add(:user_email, "- пользователь с таким e-mail зарегистрирован")
     end
   end
 end
