@@ -50,8 +50,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def user_event_owner
-    if event.user_id == user.id
-      errors.add(:user_name, "- вы не можете подписаться на своё событие")
+    if event.user == user
+      errors.add(:user, "Вы не можете подписаться на своё событие")
     end
   end
 end
