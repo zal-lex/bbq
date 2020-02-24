@@ -21,7 +21,7 @@
             <%= link_to t('button.edit'), edit_event_path(@event),
               class: 'btn btn-primary' %>
             <%= link_to t('button.delete'), event_path(@event), method: :delete,
-              class: 'btn btn-danger',  data: { confirm: I18n.t('are_you_sure') } %>
+              class: 'btn btn-danger',  data: { confirm: t('are_you_sure') } %>
           </div>
           <% end %>
         </div>
@@ -51,12 +51,12 @@
     </div>
     <div class="col-md-4">
       <div class="event-owner">
-        <h4><%= I18n.t('views.events.header.organizer') %></h4>
+        <h4><%= t('views.events.header.organizer') %></h4>
           <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <% if @event.subscriptions.exists? %>
         <div class="event-subscriptions">
-          <h4><%= I18n.t('views.events.header.subscribers') %></h4>
+          <h4><%= t('views.events.header.subscribers') %></h4>
           <div>
             <p>
             <%= render partial: 'subscriptions/subscription',
@@ -67,7 +67,7 @@
       <% end %>
       <% unless current_user_can_edit?(@event) %>
         <div class="event-subscription-form">
-          <h4><%= I18n.t('views.events.header.subscriber') %></h4>
+          <h4><%= t('views.events.header.subscriber') %></h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
               subscription: @new_subscription || @event.subscriptions.build
