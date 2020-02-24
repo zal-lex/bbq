@@ -52,6 +52,13 @@ ru:
       created: 'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
 
+  views:
+    events:
+      header:
+        subscribers: 'Пойдут:'
+        subscriber: 'Я пойду:'
+        organizer: 'Зовёт:'
+
   models:
     subscriptions:
       email_presence: 'зарегистрирован в системе. Авторизуйтесь, чтобы подписаться'
