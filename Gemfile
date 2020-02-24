@@ -8,7 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', '4.1.0.rc2'
 gem 'fog-aws'
 
 group :production do
