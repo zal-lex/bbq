@@ -45,13 +45,13 @@ class Subscription < ActiveRecord::Base
 
   def user_email_presence
     if User.find_by(email: user_email)
-      errors.add(:user_email, "- пользователь с таким e-mail зарегистрирован")
+      errors.add(:user_email, I18n.t('models.subscriptions.email_presence'))
     end
   end
 
   def user_event_owner
     if event.user == user
-      errors.add(:user, "Вы не можете подписаться на своё событие")
+      errors.add(:user, I18n.t('models.subscriptions.event_owner'))
     end
   end
 end
