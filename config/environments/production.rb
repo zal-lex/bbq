@@ -86,15 +86,16 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Устанавливаем протокол, по которому отправлять (SMTP)
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
 
-  # А это для SendGrid
+  # А это для MailGun
   ActionMailer::Base.smtp_settings = {
     port: ENV['MAILGUN_SMTP_PORT'],
     address: ENV['MAILGUN_SMTP_SERVER'],
     user_name: ENV['MAILGUN_SMTP_LOGIN'],
     password: ENV['MAILGUN_SMTP_PASSWORD'],
     domain: 'zal-lex-bbq.herokuapp.com',
-    authentication: :plain
+    authentication: :plain,
   }
+  ActionMailer::Base.delivery_method = :smtp
 end
