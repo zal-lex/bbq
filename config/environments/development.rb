@@ -40,12 +40,14 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_controller.asset_host = 'http://localhost:3000'
+  config.action_mailer.asset_host = 'http://localhost:3000'
 
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
     user_name: 'sa9229312', # почта зарегистрирована специально для тестов
-    password: 'Zevspolk!@#$%',
+    password: 'xander12cage',
     authentication: 'plain',
     enable_starttls_auto: true
   }
