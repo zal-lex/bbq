@@ -65,7 +65,7 @@
           </div>
         </div>
       <% end %>
-      <% unless current_user_can_edit?(@event) %>
+      <% unless current_user_can_edit?(@event) || @event.subscribers.exists?(current_user) %>
         <div class="event-subscription-form">
           <h4><%= t('views.events.header.subscriber') %></h4>
           <div>
