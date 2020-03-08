@@ -9,6 +9,7 @@
       <%= devise_error_messages! %>
     </div>
   <% end %>
+  <%= f.hidden_field :reset_password_token %>
 
   <div class="form-group">
     <i>(<%= t('text.password_requirement') %>)</i><br />
