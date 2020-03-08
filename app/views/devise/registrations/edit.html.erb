@@ -21,7 +21,8 @@
   <% end %>
 
   <div class="form-group">
-    <i>(<%= t('text.skip_password_change') %>)</i><br />
+    <i>(<%= t('text.skip_password_change') %>, 
+      <%= t('text.password_requirement') %>)</i><br />
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
       <%= f.password_field :password, class: "form-control", placeholder: t('user.new_password'), autocomplete: "new-password" %>
