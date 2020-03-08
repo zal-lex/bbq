@@ -82,6 +82,7 @@ ru:
     sign_up: 'Регистрация'
     sign_in: 'Вход'
     forgot_password: 'Восстановить доступ'
+    change_password: 'Изменить пароль'
     edit_profile: 'Управление профилем'
     cancel_account: 'Удаление аккаунта'
     edit_event: 'Редактирование события'
@@ -95,6 +96,7 @@ ru:
     profile: 'Профиль'
     edit_profile: 'Редактировать профиль'
     forgot_password: 'Получить инструкции'
+    change_password: 'Изменить пароль'
     update: 'Обновить'
     cancel_account: 'Удалиться'
     save: 'Сохранить'
@@ -108,6 +110,7 @@ ru:
     new_password: 'Новый пароль'
   text:
     skip_password_change: 'оставьте следующие 2 поля пустыми, если не хотите менять пароль'
+    password_requirement: 'минимум 6 символов'
     missed_events: 'Пользователь пока не организовал ни одного события'
     confirm_password_change: 'введите текущий пароль, чтобы сохранить изменения'
     cancel_account_confirmation: 'Вы устали от вопросов и больше не хотите задавить их другим?'
