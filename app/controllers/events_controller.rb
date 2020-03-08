@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all.sorted
+    @events = Event.sorted
   end
 
   # GET /events/1
