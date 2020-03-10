@@ -10,6 +10,9 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick', '4.1.0.rc2'
 gem 'fog-aws'
+gem 'sass-rails'
+gem 'coffee-rails'
+
 
 group :production do
   gem 'pg', '~>0.18'
