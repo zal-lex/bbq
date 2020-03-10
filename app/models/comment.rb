@@ -9,6 +9,7 @@ class Comment < ActiveRecord::Base
 
   # Это поле должно быть, только если не выполняется user.present? (у объекта на задан юзер)
   validates :user_name, presence: true, unless: -> { user.present? }
+  scope :sorted, -> { order(created_at: :desc) }
 
   def user_name
     if user.present?
