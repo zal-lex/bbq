@@ -23,6 +23,10 @@
   -ms-filter: blur(5px);
 }
 
+.event-header-size {
+  height: 255px;
+}
+
 .event-description * {
   color: white;
 }
