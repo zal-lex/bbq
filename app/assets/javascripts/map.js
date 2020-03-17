@@ -2,7 +2,7 @@ ymaps.ready(init);
 var myMap;
 
 function init(){
-  if (document.getElementById('map') !== null) {
+  if (document.getElementById('map')) {
     address = document.getElementById('map').getAttribute('data-address');
   } else {
     address = ''
