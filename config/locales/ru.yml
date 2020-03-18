@@ -127,6 +127,10 @@ ru:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
 
+  photos:
+    photo:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту фотку?'
+
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
