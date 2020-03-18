@@ -13,7 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require map
-//= require lightbox
-//= require ekko-lightbox
 //= require_tree .
