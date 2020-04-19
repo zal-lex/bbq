@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host:'zal-lex-bbq.herokuapp.com' }
+  config.action_mailer.default_url_options = { host:'craio.ru' }
 
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
@@ -94,7 +94,7 @@ Rails.application.configure do
     address: ENV['MAILGUN_SMTP_SERVER'],
     user_name: ENV['MAILGUN_SMTP_LOGIN'],
     password: ENV['MAILGUN_SMTP_PASSWORD'],
-    domain: 'zal-lex-bbq.herokuapp.com',
+    domain: 'craio.ru',
     authentication: :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
