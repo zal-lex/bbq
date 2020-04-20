@@ -25,4 +25,10 @@ group :development, :test do
   gem 'sqlite3', '~>1.3.6'
   gem 'thor', '0.19.1'
   gem 'byebug'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.3", require: false
+  gem 'capistrano-passenger', '~> 0.2'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-dotenv', require: false
 end
