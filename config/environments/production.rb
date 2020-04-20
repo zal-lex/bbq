@@ -64,6 +64,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -77,7 +78,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host:'craio.ru' }
+  config.action_mailer.default_url_options = { host: 'craio.ru' }
 
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
@@ -86,7 +87,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Устанавливаем протокол, по которому отправлять (SMTP)
-  # config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
 
   # А это для MailGun
   ActionMailer::Base.smtp_settings = {
@@ -97,5 +98,4 @@ Rails.application.configure do
     domain: 'craio.ru',
     authentication: :plain,
   }
-  ActionMailer::Base.delivery_method = :smtp
 end
