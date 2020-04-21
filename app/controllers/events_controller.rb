@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_event, only: [:show]
-  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :password_guard!, only: [:show]
+
+  after_action :verify_authorized, only: [:edit, :update, :destroy, :show]
 
   # GET /events
   def index
@@ -28,6 +29,7 @@ class EventsController < ApplicationController
   # POST /events
   def create
     @event = current_user.events.build(event_params)
+    authorize @event
 
     if @event.save
       redirect_to @event, notice: I18n.t('controllers.events.created')
@@ -65,15 +67,11 @@ class EventsController < ApplicationController
       flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
       render 'password_form'
     end
-
-  end
-
-  def set_current_user_event
-    @event = current_user.events.find(params[:id])
   end
 
   def set_event
     @event = Event.find(params[:id])
+    authorize @event
   end
 
   def event_params

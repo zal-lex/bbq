@@ -1,7 +1,9 @@
 <h1><%= t('header.events') %></h1>
 
 <div class="buffer-both">
-  <%= link_to t('button.create_event'), new_event_path, class: 'btn btn-success' %>
+  <% if policy(Event).create? %>
+    <%= link_to t('button.create_event'), new_event_path, class: 'btn btn-success' %>
+  <% end %>
 </div>
 
 <div class="row buffer-bottom">
