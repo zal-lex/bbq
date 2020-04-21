@@ -21,3 +21,5 @@
 
 en:
   are_you_sure: 'Are you sure?'
+  pundit:
+    not_authorized: 'You are not allowed here!'
