@@ -16,17 +16,20 @@ gem 'fog-aws'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'dotenv-rails'
+gem 'pundit', '~>2.1'
 
 group :production do
   gem 'pg', '~>0.18'
 end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.9'
+  gem 'factory_bot_rails'
   gem 'sqlite3', '~>1.3.6'
   gem 'thor', '0.19.1'
   gem 'byebug'
-  gem "capistrano", "~> 3.10", require: false
-  gem "capistrano-rails", "~> 1.3", require: false
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano-rails', '~> 1.3', require: false
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.2'
