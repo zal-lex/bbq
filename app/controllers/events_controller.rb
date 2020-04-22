@@ -4,10 +4,11 @@ class EventsController < ApplicationController
   before_action :password_guard!, only: [:show]
 
   after_action :verify_authorized, only: [:edit, :update, :destroy, :show]
+  after_action :verify_policy_scoped, only: :index
 
   # GET /events
   def index
-    @events = Event.sorted
+    @events = policy_scope(Event.sorted)
   end
 
   # GET /events/1
@@ -20,6 +21,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = current_user.events.build
+    authorize @event
   end
 
   # GET /events/1/edit
