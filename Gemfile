@@ -17,6 +17,7 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'dotenv-rails'
 gem 'pundit', '~>2.1'
+gem 'resque', '~>2.0'
 
 group :production do
   gem 'pg', '~>0.18'
@@ -34,4 +35,5 @@ group :development, :test do
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-dotenv', require: false
+  gem 'capistrano-resque', '~> 0.2.3', require: false
 end

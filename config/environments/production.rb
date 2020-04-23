@@ -1,5 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_name_prefix = "craio_#{Rails.env}"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -46,7 +48,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :warn
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
