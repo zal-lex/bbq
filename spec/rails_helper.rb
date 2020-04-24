@@ -1,14 +1,13 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'spec_helper'
-# Pundit includes a mini-DSL for writing expressive tests
-require 'pundit/rspec'
 ENV['RAILS_ENV'] ||= 'test'
-
 require File.expand_path('../config/environment', __dir__)
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+require 'spec_helper'
+require 'pundit/rspec'
 require 'rspec/rails'
+require 'support/factory_bot'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
