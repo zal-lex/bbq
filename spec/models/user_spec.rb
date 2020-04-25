@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
       double(
         :access_token,
         provider: 'facebook',
-        info: double(email: 'install.vv@gmail.com'),
+        info: double(email: 'install.vv@gmail.com', name: 'Vadim V'),
         extra: double(raw_info: double(id: '10213477015136709'))
       )
     end
