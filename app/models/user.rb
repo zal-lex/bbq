@@ -31,16 +31,6 @@ class User < ActiveRecord::Base
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
 
-  def self.find_for_facebook_oauth(access_token)
-    find_and_oauth(access_token)
-  end
-
-  def self.find_for_vkontakte_oauth(access_token)
-    find_and_oauth(access_token)
-  end
-
-  private
-
   def self.find_and_oauth(access_token)
     # Достаём email из токена
     email = access_token.info.email
