@@ -3,8 +3,10 @@ class NotifyUsersJob < ActiveJob::Base
 
   def perform(obj)
     event = obj.event
-    # Собираем всех подписчиков и автора события в массив мэйлов, инициатора события (комментарий или фото), о котором уведомляем
-    all_emails = event.subscribers.map(&:email) + [event.user.email] - [obj.user&.email]
+    # Собираем всех подписчиков и автора события в массив мэйлов, убираем
+    # из массива инициатора события (комментарий или фото), о котором 
+    # уведомляем и e-mail адреса пользователей из vk.com
+    all_emails = event.subscribers.map(&:email) + [event.user.email] - [obj.user&.email] - event.subscribers.map(&:email).grep(/@vk.com/)
 
     # По адресам из этого массива делаем рассылку в зависимости от типа объекта
     case obj
