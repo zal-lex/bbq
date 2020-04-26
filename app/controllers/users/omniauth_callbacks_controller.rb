@@ -1,15 +1,15 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    authorize('Facebook')
+    authorize_through_social('Facebook')
   end
 
   def vkontakte
-    authorize('Vkontakte')
+    authorize_through_social('Vkontakte')
   end
 
   private
 
-  def authorize(kind)
+  def authorize_through_social(kind)
     # Дёргаем метод модели, который найдёт пользователя
     @user = User.find_and_oauth(request.env['omniauth.auth'])
 
