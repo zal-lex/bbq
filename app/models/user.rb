@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     url = "https://#{provider}.com/#{id}"
 
     # Если пользователь был зарегистрирован без e-mail, генерируем ему e-mail
-    email = "#{id}@#{provider}.com" if email == nil
+    email = "#{id}@#{provider}.com" if email.nil?
 
     # Достаём аватарку пользователя
     avatar_url = access_token.info.image
