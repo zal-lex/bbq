@@ -120,7 +120,7 @@ ru:
     password_requirement: 'минимум 6 символов'
     missed_events: 'Пользователь пока не организовал ни одного события'
     confirm_password_change: 'введите текущий пароль, чтобы сохранить изменения'
-    cancel_account_confirmation: 'Вы устали от вопросов и больше не хотите задавить их другим?'
+    cancel_account_confirmation: 'Вы больше не хотите быть частью тусовок?'
   link:
     back: 'Вернуться'
     change_password: 'Сменить пароль'

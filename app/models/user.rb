@@ -3,13 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook, :vkontakte]
+         :omniauthable, omniauth_providers: %i[facebook vkontakte]
 
   has_many :events
   has_many :subscriptions
   has_many :comments, dependent: :destroy
 
-  validates :name, presence: true, length: {maximum: 35}
+  validates :name, presence: true, length: { maximum: 35 }
 
   before_validation :set_name, on: :create
 
@@ -42,22 +42,22 @@ class User < ActiveRecord::Base
 
     # Теперь ищем в базе запись по провайдеру и урлу
     # Если есть, то вернётся, если нет, то будет создана новая
-    where(url: url, provider: provider).first_or_create! do |user|
+    where(url: url, provider: provider).first_or_create! do |u|
       # Если создаём новую запись, прописываем email и пароль
-      user.email = email
-      user.password = Devise.friendly_token.first(16)
-      user.name = access_token.info.name
-      user.remote_avatar_url = avatar_url
+      u.email = email
+      u.password = Devise.friendly_token.first(16)
+      u.name = access_token.info.name
+      u.remote_avatar_url = avatar_url
     end
   end
 
   private
 
   def set_name
-    self.name = "Товарисч №#{rand(777)}" if self.name.blank?
+    self.name = "Товарисч №#{rand(777)}" if name.blank?
   end
 
   def link_subscriptions
-    Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
+    Subscription.where(user_id: nil, user_email: email).update_all(user_id: id)
   end
 end

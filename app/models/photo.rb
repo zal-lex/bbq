@@ -9,5 +9,5 @@ class Photo < ActiveRecord::Base
 
   # Scope нужен, чтобы отделить реальные фотки от болванки,
   # которую мы прописали в контроллере событий
-  scope :persisted, -> { where "id IS NOT NULL" }
+  scope :persisted, -> { where 'id IS NOT NULL' }
 end

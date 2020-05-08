@@ -8,8 +8,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   # PATCH/PUT /users/1
   def update
@@ -21,12 +20,13 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_current_user
-      @user = current_user
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def user_params
-      params.require(:user).permit(:name, :email, :avatar)
-    end
+  def set_current_user
+    @user = current_user
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def user_params
+    params.require(:user).permit(:name, :email, :avatar)
+  end
 end

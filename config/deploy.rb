@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.13.0"
+lock '~> 3.13.0'
 
 set :application, 'myapp'
 set :repo_url, 'git@github.com:zal-lex/bbq.git'
@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:zal-lex/bbq.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/myapp"
+set :deploy_to, '/var/www/myapp'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

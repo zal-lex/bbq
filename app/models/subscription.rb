@@ -9,14 +9,14 @@ class Subscription < ActiveRecord::Base
   # только если user не задан
   # То есть для анонимных пользователей
   validates :user_name, presence: true, unless: -> { user.present? }
-  validates :user_email, presence: true, 
-    format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? }
+  validates :user_email, presence: true,
+                         format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? }
 
   # Для конкретного event_id один юзер может подписаться только один раз (если юзер задан)
-  validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
+  validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
 
   # Или один email может использоваться только один раз (если анонимная подписка)
-  validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
+  validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
   validate :user_email_presence, unless: -> { user.present? }
   validate :user_event_owner, if: -> { user.present? }
@@ -25,9 +25,9 @@ class Subscription < ActiveRecord::Base
   # если нет – дергаем исходный метод
   def user_name
     if user.present?
-     user.name
+      user.name
     else
-     super
+      super
     end
   end
 
@@ -44,14 +44,10 @@ class Subscription < ActiveRecord::Base
   private
 
   def user_email_presence
-    if User.find_by(email: user_email)
-      errors.add(:user_email, I18n.t('models.subscriptions.email_presence'))
-    end
+    errors.add(:user_email, I18n.t('models.subscriptions.email_presence')) if User.find_by(email: user_email)
   end
 
   def user_event_owner
-    if event.user == user
-      errors.add(:user, I18n.t('models.subscriptions.event_owner'))
-    end
+    errors.add(:user, I18n.t('models.subscriptions.event_owner')) if event.user == user
   end
 end

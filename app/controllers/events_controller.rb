@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[show index]
+  before_action :set_event, only: %i[show edit update destroy]
   before_action :password_guard!, only: [:show]
 
-  after_action :verify_authorized, only: [:edit, :update, :destroy, :show]
+  after_action :verify_authorized, only: %i[edit update destroy show]
   after_action :verify_policy_scoped, only: :index
 
   # GET /events
@@ -25,8 +25,7 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /events
   def create
@@ -65,10 +64,10 @@ class EventsController < ApplicationController
       cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
 
-    unless @event.pincode_valid?(cookies.permanent["events_#{@event.id}_pincode"])
-      flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
-      render 'password_form'
-    end
+    return if @event.pincode_valid?(cookies.permanent["events_#{@event.id}_pincode"])
+
+    flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
+    render 'password_form'
   end
 
   def set_event

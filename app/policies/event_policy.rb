@@ -18,7 +18,7 @@ class EventPolicy < ApplicationPolicy
   def edit?
     update?
   end
- 
+
   def destroy?
     update?
   end
@@ -28,13 +28,13 @@ class EventPolicy < ApplicationPolicy
       scope.all
     end
   end
- 
+
   private
 
   def event
     record
   end
- 
+
   def user_owner?
     user.present? && user == event.try(:user)
   end

@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
     context 'when user is found by provider + url' do
       let!(:existing_user) do
         create(:user, provider: 'facebook',
-               url: 'https://facebook.com/10213477015136709')
+                      url: 'https://facebook.com/10213477015136709')
       end
       let!(:some_other_uer) { create(:user) }
 
