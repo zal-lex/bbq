@@ -1,8 +1,12 @@
-*Заметка: 
-Cайт craio.ru расположен на VPS DigitalOcean.
-Работает под управлением серверов nginx и Phusion Passenger.
-Для хранения данных используется СУБД PostgreSQL.
-Деплой осуществляется с помощью гема `Capistrano` командой `cap production deploy`.*
+*Заметка:*
+
+  - *Cайт craio.ru расположен на VPS DigitalOcean.*
+
+  - *Работает под управлением серверов nginx и Phusion Passenger.*
+
+  - *Для хранения данных используется СУБД PostgreSQL.*
+
+  - *Деплой осуществляется с помощью гема `Capistrano` командой `cap production deploy`.*
 
 # Установка
 
